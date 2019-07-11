@@ -20,6 +20,20 @@ or: application-prod.properties
 
 -> @PropertySource("classpath:/application-${spring.profiles.active}.properties")
 
+@Autowired
+@Qualifier
+
+# Autowiring
+- Field Level -> Don't do this because you cannot control the construction of you object -> cannot mock in Unit Test
+- Setter Injection: used for optional dependencies or changing dependencies
+- Constructor Injection -> this is the prefered method, with this you class becomes immutable -> get perfect encapsulation
+
+# Lifecycle
+- @PostConstruct: specify a single method to execute after construction
+- @PreDestroy: execute when ApplicationContext closes
+
+@ComponentScan
+
 # Spring Expression Language
 @Value("#{new Boolean(environment['spring.profiles.active']=='dev'}")
 private boolean isDev;
