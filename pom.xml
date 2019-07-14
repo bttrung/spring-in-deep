@@ -16,6 +16,7 @@
     <modules>
         <module>spring-core</module>
         <module>spring-boot</module>
+        <module>spring-cloud</module>
     </modules>
 
     <dependencies>
